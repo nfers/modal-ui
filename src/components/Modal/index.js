@@ -1,22 +1,17 @@
 import React from 'react';
 
-const Modal = ({ children }) => {
+const Modal = ({onClose = () =>{}, children }) => {
 
   return (
     <div className="modal">
       <div className="container">        
-      <button className="close" />
-        <div className="content">
-        
+      <button className="close" onClick={onClose}/>
+        <div className="content">        
           {children}
-        </div>
-        
+        </div>       
       </div>
     </div>
-
-
   )
-
 }
 
 export default Modal;

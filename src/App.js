@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <button onClick={() => setIsModalVisible(true)} >Abrir Modal</button>
       {isModalVisible ? (
-        <Modal>
+        <Modal onClose={() => setIsModalVisible(false)}>
           <h2>Modal do App</h2>
         </Modal>
       ) : null}
