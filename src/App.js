@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+// libs
+import React, { useState } from 'react';
+
+// componentes
+import Modal from './components/Modal';
+//estilizações
 import './App.css';
 
 function App() {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
+  async function api(url) {
+    const response = await fetch('http://api.deezer.com/search/artist?q=beyonce')
+    console.log(response.data)
+    return response.data;
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setIsModalVisible(true)} >Abrir Modal</button>
+      {isModalVisible ? (
+        <Modal>
+          <h2>Modal do App</h2>
+        </Modal>
+      ) : null}
     </div>
   );
 }
