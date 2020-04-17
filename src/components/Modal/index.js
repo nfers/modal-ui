@@ -4,12 +4,13 @@ const Modal = ({ children }) => {
 
   return (
     <div className="modal">
-      <div className="container">
-        
+      <div className="container">        
+      <button className="close" />
         <div className="content">
-          <h1>{children}</h1>
+        
+          {children}
         </div>
-        <button className="close">Sair</button>
+        
       </div>
     </div>
 

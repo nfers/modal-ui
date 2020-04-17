@@ -9,13 +9,6 @@ import './App.css';
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false)
 
-  async function api(url) {
-    const response = await fetch('http://api.deezer.com/search/artist?q=beyonce')
-    console.log(response.data)
-    return response.data;
-
-  }
-
   return (
     <div className="App">
       <button onClick={() => setIsModalVisible(true)} >Abrir Modal</button>
