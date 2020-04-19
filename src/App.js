@@ -15,6 +15,7 @@ function App() {
       {isModalVisible ? (
         <Modal onClose={() => setIsModalVisible(false)}>
           <h2>Modal do App</h2>
+          <p>Este é Um exemplo de <strong>modal</strong>, existem melhorias a serem feitas porém já é uma grande vitória</p>
         </Modal>
       ) : null}
     </div>
